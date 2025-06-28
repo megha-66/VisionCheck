@@ -1,0 +1,73 @@
+body {
+  color: black;
+  font-family: sans-serif;
+  padding: 2rem;
+}
+
+.container {
+	background-color: lightyellow;
+	background-image:url('eye.png');
+	background-repeat:no-repeat;
+	background-size:370px 370px;
+	background-position: 1500px 300px;
+}
+
+.container1{
+	background-color:lightyellow;
+}
+
+h1 {
+	font-size:70px;
+	text-align:center;
+	color:black;
+	position:static;
+	transform:none;
+	overflow:visible;
+}
+
+
+ul li {
+	line-height:500%; 
+	padding-left: 60px;
+	font-size:20px;
+	font-weight:bold;
+	background:transparent;
+	color:green;
+	margin:5px;
+	text:90px;
+}
+
+p {
+	text-align:center;
+	font-size:30px;
+	color:black;
+}
+
+
+ol li {
+	line-height:100%;
+        font-size:20px;
+        font-weight:bold;
+        color:black;
+	text-align: left;
+        margin:5px;
+        text:10px;
+}
+
+.fade-in {
+  animation: fadeInOut 2s ease-in-out infinite; /* Runs forever */
+  opacity: 0;
+}
+
+@keyframes fadeInOut {
+  0% { opacity: 0; }
+  50% { opacity: 1; }
+  100% { opacity: 0; }
+}
+
+.animated-text span {
+  opacity: 0;
+  transition: opacity 0.4s ease-in;
+  display: inline-block;
+}
+
