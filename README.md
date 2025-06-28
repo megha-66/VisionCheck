@@ -10,4 +10,7 @@ Check the app at : [link](https://eyesmatter.surge.sh/)
 
 ![ResultsPage](https://github.com/user-attachments/assets/713fa751-e0c3-4bd8-a539-a7bcc6f9b8ff)
 
+Tech stack :- 
+```React.js```, ```Vanilla CSS```,  ```HTML```, ```Express.js``` and ```Surge``` for deployment.
+
 
