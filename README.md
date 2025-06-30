@@ -10,7 +10,7 @@ This vision check system provides 4 priliminary optometric tests to users for ch
 ```Astigmatism Test```\
 ```Color Blindness Test```
 
-Each of the above tests have their own separate interfaces in the application.
+Each of the above tests have their own separate interfaces in the application. The app is  WIP but the primary functionalities have already been added. 
 
 
 Check the app at : [link](https://eyesmatter.surge.sh/)
