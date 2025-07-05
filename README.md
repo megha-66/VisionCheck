@@ -5,10 +5,10 @@ According to a recent report, an average Indian spends more than 3 hours of thei
 ### <ins> Features of the system :- </ins>
 This vision check system provides 4 priliminary optometric tests to users for checking their vision and rates their vision to generate corresponding feedbacks with the scores they get. The four optometric tests included in this are :- 
 
-```SnellenChart Test```\
-```Contrast Sensitivity Test```\
-```Astigmatism Test```\
-```Color Blindness Test```
+```SnellenChart Test```: This test helps in asessment of visual acuity.\
+```Contrast Sensitivity Test```: This test is used to evaluate the user ability to distinguish contrasts.\
+```Astigmatism Test```: This test helps in detecting refractive errors.\
+```Color Blindness Test```: This test helps in identifying color perception deficiencies.
 
 Each of the above tests have their own separate interfaces in the application. The app is  WIP but the primary functionalities have already been added. 
 
