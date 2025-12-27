@@ -13,7 +13,7 @@ This vision check system provides 4 preliminary optometric tests to users for ch
 Each of the above tests has its own separate interface in the application. The app is  WIP, though the primary functionalities have already been added. 
 
 
-Check the app at : [link](https://eyesmatter.surge.sh/)
+Check the app at : [link](https://visioncheck.surge.sh/)
 
 ![HomePage](https://github.com/user-attachments/assets/2ed9410d-dd41-4797-b544-79e7e208af65)
 
