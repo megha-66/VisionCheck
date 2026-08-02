@@ -30,7 +30,7 @@ const ColorBlindnessTest = ({ onSubmit }) => {
 return (
 	<div style={{ textAlign: 'center', padding:'2rem' }}>
 	<h1> Color Blindness Test </h1>
-	<p class="fade-in"> What number do you see in the circle? </p>
+	<p className="fade-in"> What number do you see in the circle? </p>
 	<img 
 	 src={plates[current].image}
 	 alt={`Ishihara plate ${plates[current].id}`}

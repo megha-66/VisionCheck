@@ -21,7 +21,7 @@ const SnellenChart = ({ onSubmit }) => {
   return (
     <div>
       <h1>Snellen Eye Chart</h1>
-      <p class="fade-in"> Please select the last row whose alphabets are clearly visible to you. Scroll down upto the bottom to see all the rows. </p>
+      <p className="fade-in"> Please select the last row whose alphabets are clearly visible to you. Scroll down upto the bottom to see all the rows. </p>
       <div style={{ marginBottom: '5rem'}}>
         {snellenRows.map((row, index) => (
           <div

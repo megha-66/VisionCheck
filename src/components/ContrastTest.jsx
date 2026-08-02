@@ -30,7 +30,7 @@ const ContrastTest = ({ onSubmit }) => {
   return (
     <div>
       <h1>Contrast Sensitivity Test</h1>
-      <p class="fade-in">Click the last line you can read clearly. Scroll down upto the bottom and check!</p>
+      <p className="fade-in">Click the last line you can read clearly. Scroll down upto the bottom and check!</p>
       <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
         {contrastLevels.map((level, i) => (
           <div

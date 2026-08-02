@@ -18,7 +18,7 @@ const AstigmatismTest = ({ onSubmit }) => {
 
       {!showChoices ? (
         <>
-          <p class="fade-in">Follow these 4 steps and see if you have astigmatism:</p>
+          <p className="fade-in">Follow these 4 steps and see if you have astigmatism:</p>
           <ol style={{ textAlign: 'left', maxWidth: '500px', margin: 'auto' }}>
             <li>Take off your glasses. If you are wearing contact lenses, keep them in your eyes</li>
             <li>Cover first your right eye and then the left eye,one at a time for completing this test.</li>
