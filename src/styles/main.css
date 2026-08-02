@@ -71,3 +71,95 @@ ol li {
   display: inline-block;
 }
 
+
+.home-header {
+  align-items: center;
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  position: relative;
+}
+
+.user-greeting {
+  font-size: 1rem;
+  margin-top: -2rem;
+}
+
+.logout-button {
+  background: #111827;
+  border: 0;
+  border-radius: 999px;
+  color: white;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 700;
+  padding: 0.8rem 1.4rem;
+  position: absolute;
+  right: 2rem;
+  top: 2rem;
+}
+
+.auth-container {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  min-height: 80vh;
+}
+
+.auth-card {
+  background: rgba(255, 255, 255, 0.92);
+  border-radius: 24px;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.14);
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+  max-width: 460px;
+  padding: 2.5rem;
+  width: 100%;
+}
+
+.auth-card h1 {
+  font-size: 3rem;
+  margin: 0;
+}
+
+.auth-card label {
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.auth-card input {
+  border: 1px solid #cbd5e1;
+  border-radius: 12px;
+  font-size: 1rem;
+  padding: 0.9rem 1rem;
+}
+
+.auth-intro,
+.auth-error {
+  font-size: 1rem;
+  margin: 0;
+}
+
+.auth-error {
+  color: #b91c1c;
+  font-weight: 700;
+}
+
+.auth-button {
+  background: #166534;
+  border: 0;
+  border-radius: 12px;
+  color: white;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 1rem;
+  font-weight: 700;
+  padding: 1rem;
+  text-align: center;
+  text-decoration: none;
+}
+
+.auth-button.secondary {
+  background: #111827;
+}

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import SnellenChart from '../components/SnellenChart';
 import ContrastTest from '../components/ContrastTest';
@@ -8,11 +8,8 @@ import ColorBlindnessTest from '../components/ColorBlindnessTest';
 const TestPage = () => {
   const { type } = useParams();
   const navigate = useNavigate();
-  const [score, setScore] = useState(null);
 
   const handleTestComplete = (testScore) => {
-    setScore(testScore);
-
     // You could send this score to the backend later
     console.log(`Test "${type}" completed. Your Score : ${testScore}`);
 
