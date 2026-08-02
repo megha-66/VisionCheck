@@ -27,3 +27,17 @@ Tech Stack:-
 ```React.js```, ```Vanilla CSS```,  ```HTML```, ```Express.js``` and ```Surge``` for deployment.
 
 
+
+### OAuth configuration
+
+VisionCheck uses a configurable OAuth provider for sign in. Add the following Vite environment variables before running or deploying the app:
+
+```bash
+VITE_OAUTH_PROVIDER_NAME="Your Provider"
+VITE_OAUTH_AUTHORIZATION_URL="https://provider.example.com/oauth2/authorize"
+VITE_OAUTH_CLIENT_ID="your-oauth-client-id"
+VITE_OAUTH_REDIRECT_URI="http://localhost:5173/auth/callback"
+VITE_OAUTH_SCOPE="openid email profile"
+```
+
+The configured OAuth app must allow the `/auth/callback` redirect URI for each environment.

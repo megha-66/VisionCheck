@@ -1,9 +1,16 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
-import { useAuth } from '../auth';
+import { Link, useNavigate } from 'react-router-dom';
+import { clearOAuthSession, getOAuthConfig, getOAuthSession } from '../oauth';
 
 const HomePage = () => {
-  const { logout, user } = useAuth();
+  const navigate = useNavigate();
+  const session = getOAuthSession();
+  const { providerName } = getOAuthConfig();
+  const handleSignOut = () => {
+    clearOAuthSession();
+    navigate('/login', { replace: true });
+  };
+
   const tests = [
     { name: 'Snellen Chart Test', path: 'snellen' },
     { name: 'Contrast Sensitivity Test', path: 'contrast' },
@@ -16,9 +23,9 @@ const HomePage = () => {
       <div className="home-header">
         <div>
           <h1>VisionCheck</h1>
-          <p className="user-greeting">Signed in as {user?.name || user?.email}</p>
+          <p className="user-greeting">Signed in with {session?.provider || providerName}</p>
         </div>
-        <button className="logout-button" onClick={logout} type="button">Sign out</button>
+        <button className="logout-button" onClick={handleSignOut} type="button">Sign out</button>
       </div>
       <p className="fade-in">Welcome! Select a vision test below to begin:</p>
       <p> For all of the tests below, you need to maintain a distance of 35cm from your screen and remove your glasses (if any) </p>

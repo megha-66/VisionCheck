@@ -1,40 +1,31 @@
 import React, { useState } from 'react';
-import { Link, useLocation, useNavigate } from 'react-router-dom';
-import { useAuth } from '../auth';
+import { Link, useLocation } from 'react-router-dom';
+import { getOAuthConfig, isOAuthAuthenticated, startOAuthLogin } from '../oauth';
 
 const LoginPage = () => {
-  const { isAuthenticated, login } = useAuth();
   const location = useLocation();
-  const navigate = useNavigate();
-  const [formData, setFormData] = useState({ email: '', name: '' });
   const [error, setError] = useState('');
-
   const destination = location.state?.from?.pathname || '/';
+  const { clientId, authorizationUrl, providerName } = getOAuthConfig();
+  const isConfigured = Boolean(clientId && authorizationUrl);
 
-  const handleChange = (event) => {
-    const { name, value } = event.target;
-    setFormData((currentData) => ({ ...currentData, [name]: value }));
-  };
-
-  const handleSubmit = (event) => {
-    event.preventDefault();
+  const handleOAuthLogin = () => {
     setError('');
 
-    if (!formData.email.trim()) {
-      setError('Please enter your email address to continue.');
-      return;
+    try {
+      startOAuthLogin(destination);
+    } catch (oauthError) {
+      setError(oauthError.message);
     }
-
-    login({ email: formData.email.trim(), name: formData.name.trim() });
-    navigate(destination, { replace: true });
   };
 
-  if (isAuthenticated) {
+  if (isOAuthAuthenticated()) {
     return (
       <div className="container auth-container">
         <div className="auth-card">
+          <p className="auth-eyebrow">Authenticated</p>
           <h1>Welcome back</h1>
-          <p>You are already signed in.</p>
+          <p>You are already signed in with OAuth.</p>
           <Link className="auth-button secondary" to={destination}>Continue to VisionCheck</Link>
         </div>
       </div>
@@ -43,34 +34,25 @@ const LoginPage = () => {
 
   return (
     <div className="container auth-container">
-      <form className="auth-card" onSubmit={handleSubmit}>
+      <div className="auth-card">
+        <p className="auth-eyebrow">Secure OAuth sign in</p>
         <h1>Sign in</h1>
-        <p className="auth-intro">Create a local profile to keep your test session private on this device.</p>
+        <p className="auth-intro">
+          Continue with your configured OAuth identity provider to access VisionCheck tests.
+        </p>
 
-        <label htmlFor="name">Name</label>
-        <input
-          id="name"
-          name="name"
-          onChange={handleChange}
-          placeholder="Your name"
-          type="text"
-          value={formData.name}
-        />
-
-        <label htmlFor="email">Email address</label>
-        <input
-          id="email"
-          name="email"
-          onChange={handleChange}
-          placeholder="you@example.com"
-          type="email"
-          value={formData.email}
-        />
+        {!isConfigured && (
+          <p className="auth-error">
+            OAuth is not configured yet. Add VITE_OAUTH_AUTHORIZATION_URL and VITE_OAUTH_CLIENT_ID to your environment.
+          </p>
+        )}
 
         {error && <p className="auth-error">{error}</p>}
 
-        <button className="auth-button" type="submit">Sign in</button>
-      </form>
+        <button className="auth-button" disabled={!isConfigured} onClick={handleOAuthLogin} type="button">
+          Continue with {providerName}
+        </button>
+      </div>
     </div>
   );
 };
